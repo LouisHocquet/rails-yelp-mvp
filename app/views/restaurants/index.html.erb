@@ -1,0 +1,15 @@
+<h1>Restaurants</h1>
+
+<% @restaurants.each do |r| %>
+  <ul class="list-group">
+    <li class="list-group-item p-3 mb-2 rounded shadow-sm d-flex justify-content-between">
+      <div>
+        <h2><%= r.name %></h2>
+        <p><%= r.address %> - <span><%= r.phone_number %></span></p>
+      </div>
+      <div class="d-flex align-items-center">
+        <%= link_to ('<i class="fas fa-chevron-right text-primary "></i>').html_safe, restaurant_path(r)  %>
+      </div>
+    </li>
+  </ul>
+<% end %>

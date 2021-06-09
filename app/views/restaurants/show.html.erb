@@ -1,0 +1,18 @@
+<h1><%= @restaurant.name %></h1>
+
+<div class="card bg-light shadow p-3 rounded mt-3">
+  <strong>Address: </strong><%= @restaurant.address %>
+  <strong>Category: </strong><%= @restaurant.category %>
+  <strong>Phone: </strong><%= @restaurant.phone_number %>
+</div>
+
+<h2 class="mt-5">Reviews</h2>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item p-3 mb-2 rounded shadow-sm">
+      <%= review.content %> - <%= review.rating %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+

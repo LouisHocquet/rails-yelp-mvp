@@ -13,6 +13,12 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-light bg-light p-3 d-flex justify-content-between">
+    <%= link_to "Restaurants", restaurants_path %>
+    <%= link_to "Add Restaurant", new_restaurant_path, class: "btn btn-primary rounded-3 color-white" %>
+  </nav>
+  <div class="container">
     <%= yield %>
+  </div>
   </body>
 </html>
