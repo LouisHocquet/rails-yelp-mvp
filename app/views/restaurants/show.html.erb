@@ -10,9 +10,14 @@
 <ul class="list-group">
   <% @restaurant.reviews.each do |review| %>
     <li class="list-group-item p-3 mb-2 rounded shadow-sm">
-      <%= review.content %> - <%= review.rating %>
+      <%= review.content %> - 
+      <% review.rating.times do %>
+        <i class="fas fa-star text-warning"></i>
+      <% end %>
+      <% (5 - review.rating).times do %>
+        <i class="far fa-star text-warning"></i>
+      <% end %>
     </li>
   <% end %>
 </ul>
 <%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
-
